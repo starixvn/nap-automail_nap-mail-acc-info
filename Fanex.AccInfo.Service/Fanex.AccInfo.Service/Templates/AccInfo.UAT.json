@@ -1,0 +1,14 @@
+{
+  "DBWH.bodb_dwrs.dwrs": {
+    "DataSource": "10.18.200.58",
+    "UserId": "dwrs",
+    "InitialCatalog": "bodb_dwrs",
+    "Password": "KbGyvo0Fga8="
+  },
+  "DBMMS.bodb_MMS.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_MMS",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  }
+}

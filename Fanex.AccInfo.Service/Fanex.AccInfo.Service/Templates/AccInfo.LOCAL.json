@@ -1,0 +1,80 @@
+{
+  "DBWH.bodb_dwrs.dwrs": {
+    "DataSource": "10.18.200.58",
+    "UserId": "dwrs",
+    "InitialCatalog": "bodb_dwrs",
+    "Password": "KbGyvo0Fga8="
+  },
+  "DBMMS.bodb_MMS.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_MMS",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBWH.bodb_dwrs.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_dwrs",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBAGE.bodb02.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb02",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBEXT.bodb02.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb02",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBMA.bodb_Maintenance.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_Maintenance",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBLIC.bodb_Licensee.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_Licensee",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBONUSER.ON_USER.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "ON_USER",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBACC.bodb02.wsv_nap": {
+    "DataSource": "10.18.200.56",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb02",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBLOG.bodb_CustomerLog.wsv_nap": {
+    "DataSource": "10.18.200.57",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_CustomerLog",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBRPT.bodb_Report.wsv_nap": {
+    "DataSource": "10.18.200.56",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_Report",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBCUST.CustDB.wsv_nap": {
+    "DataSource": "10.18.200.54",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "CustDB",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBSUM.bodb_Summary.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_Summary",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  }
+}

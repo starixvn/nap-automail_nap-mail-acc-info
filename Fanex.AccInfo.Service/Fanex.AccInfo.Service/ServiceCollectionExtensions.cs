@@ -20,6 +20,9 @@ public static class ServiceCollectionExtensions
         Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
         var text = File.ReadAllText("appsettings.json");
         AppConfigService.Config = JsonConvert.DeserializeObject<ConfigSettingModel>(text);
+        var json = File.ReadAllText(AppConfigService.Config.AccFile);
+        var accInfo = JsonConvert.DeserializeObject<Dictionary<string, AccInfoModel>>(json);
+        AppConfigService.Config.AccInfos = accInfo;
     }
 
     public static void SentryRegister(this IServiceCollection services)
