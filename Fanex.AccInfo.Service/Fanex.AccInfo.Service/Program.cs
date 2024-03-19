@@ -1,4 +1,3 @@
-using Fanex.MailDelivery.Client;
 using Fanex.AccInfo.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,9 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.LoadConfiguration();
 builder.Services.SentryRegister();
-builder.Services.FanexDataRegister(builder.Configuration);
+
 builder.Services.InternalServiceRegister();
-MailClientHandler.Start();
 
 var app = builder.Build();
 
