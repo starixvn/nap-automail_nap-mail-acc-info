@@ -2,7 +2,7 @@
 
 namespace Fanex.AccInfo.Business.Services
 {
-    public static class AppConfigService
+    public static class AccInfoConfigService
     {
         public static ConfigSettingModel Config { get; set; } = new ConfigSettingModel();
     }

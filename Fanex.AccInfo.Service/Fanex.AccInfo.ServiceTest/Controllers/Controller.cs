@@ -11,7 +11,7 @@ namespace Fanex.AccInfo.ServiceTest.Controllers
         [HttpGet]
         public JsonResult Execute()
         {
-            AppConfigService.Config.ApiUrl = "https://accinfo.nexdev.net/";
+            AccInfoConfigService.Config.ApiUrl = "https://accinfo.nexdev.net/";
             var service = new AccInfoClientServiceImp();
             var param = new ParamModel
             {

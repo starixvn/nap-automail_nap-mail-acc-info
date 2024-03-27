@@ -13,7 +13,7 @@ namespace Fanex.AccInfo.Business.Services
     {
         public AccInfoClientServiceImp()
         {
-            WebApiClientService.ApiUrl = AppConfigService.Config.ApiUrl;
+            WebApiClientService.ApiUrl = AccInfoConfigService.Config.ApiUrl;
         }
 
         public Dictionary<string, AccInfoModel> Query(ParamModel param)

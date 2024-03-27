@@ -19,21 +19,21 @@ public static class ServiceCollectionExtensions
     {
         Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
         var text = File.ReadAllText("appsettings.json");
-        AppConfigService.Config = JsonConvert.DeserializeObject<ConfigSettingModel>(text);
-        var json = File.ReadAllText(AppConfigService.Config.AccFile);
+        AccInfoConfigService.Config = JsonConvert.DeserializeObject<ConfigSettingModel>(text);
+        var json = File.ReadAllText(AccInfoConfigService.Config.AccFile);
         var accInfo = JsonConvert.DeserializeObject<Dictionary<string, AccInfoModel>>(json);
-        AppConfigService.Config.AccInfos = accInfo;
+        AccInfoConfigService.Config.AccInfos = accInfo;
     }
 
     public static void SentryRegister(this IServiceCollection services)
     {
         var sentry = new SentryLogging(new SentryEngineOptions
         {
-            Dsn = new Dsn(AppConfigService.Config.SentryClientKey)
+            Dsn = new Dsn(AccInfoConfigService.Config.SentryClientKey)
         });
 
         LogManager
-            .SetDefaultLogCategory(AppConfigService.Config.CategorySentryLog)
+            .SetDefaultLogCategory(AccInfoConfigService.Config.CategorySentryLog)
             .Use(new List<ILogEngine>
             {
                 sentry
@@ -42,7 +42,6 @@ public static class ServiceCollectionExtensions
 
     public static void InternalServiceRegister(this IServiceCollection services)
     {
-        services.AddSingleton<ILog, LogImp>();
         Services = services;
     }
 }
