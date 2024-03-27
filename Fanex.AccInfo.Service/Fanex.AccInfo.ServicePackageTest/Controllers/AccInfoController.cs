@@ -1,6 +1,5 @@
 using Fanex.AccInfo.Business.Models;
 using Fanex.AccInfo.Business.Services;
-using Fanex.AccInfo.Client;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fanex.AccInfo.ServicePackageTest.Controllers
@@ -12,7 +11,7 @@ namespace Fanex.AccInfo.ServicePackageTest.Controllers
         [HttpGet]
         public JsonResult Execute()
         {
-            AppConfigService.Config.AccInfoServiceApi = "https://accinfo.nexdev.net/";
+            AppConfigService.Config.ApiUrl = "https://accinfo.nexdev.net/";
             var service = new AccInfoClientServiceImp();
             var param = new ParamModel
             {

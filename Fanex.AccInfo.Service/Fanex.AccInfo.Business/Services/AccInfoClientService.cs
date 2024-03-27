@@ -1,7 +1,8 @@
 ﻿using Fanex.AccInfo.Business.Models;
-using Fanex.AccInfo.Business.Services;
+using Fanex.WebApiClient.Utility;
+using System.Collections.Generic;
 
-namespace Fanex.AccInfo.Client
+namespace Fanex.AccInfo.Business.Services
 {
     public interface AccInfoClientService
     {
@@ -12,7 +13,7 @@ namespace Fanex.AccInfo.Client
     {
         public AccInfoClientServiceImp()
         {
-            WebApiClientService.AccInfoServiceApi = AppConfigService.Config.AccInfoServiceApi;
+            WebApiClientService.ApiUrl = AppConfigService.Config.ApiUrl;
         }
 
         public Dictionary<string, AccInfoModel> Query(ParamModel param)

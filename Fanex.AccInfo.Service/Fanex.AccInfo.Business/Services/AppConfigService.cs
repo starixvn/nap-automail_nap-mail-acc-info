@@ -1,8 +1,9 @@
 ﻿using Fanex.AccInfo.Business.Models;
 
-namespace Fanex.AccInfo.Business.Services;
-
-public static class AppConfigService
+namespace Fanex.AccInfo.Business.Services
 {
-    public static ConfigSettingModel Config { get; set; } = new ConfigSettingModel();
+    public static class AppConfigService
+    {
+        public static ConfigSettingModel Config { get; set; } = new ConfigSettingModel();
+    }
 }
