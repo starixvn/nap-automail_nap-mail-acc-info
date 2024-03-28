@@ -76,5 +76,17 @@
     "UserId": "wsv_nap",
     "InitialCatalog": "bodb_Summary",
     "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBCUST.IPDB.wsv_nap": {
+    "DataSource": "10.18.200.54",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "IPDB",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
+  },
+  "DBOIC.bodb_OIC.wsv_nap": {
+    "DataSource": "10.18.200.58",
+    "UserId": "wsv_nap",
+    "InitialCatalog": "bodb_OIC",
+    "Password": "tGvQ81wDp57an/VkfWyADdrGgwl6B52sSewTPyTAFw4="
   }
 }
