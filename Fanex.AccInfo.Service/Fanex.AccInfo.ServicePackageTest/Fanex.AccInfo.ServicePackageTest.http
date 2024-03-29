@@ -1,0 +1,6 @@
+@Fanex.AccInfo.ServicePackageTest_HostAddress = http://localhost:5289
+
+GET {{Fanex.AccInfo.ServicePackageTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
