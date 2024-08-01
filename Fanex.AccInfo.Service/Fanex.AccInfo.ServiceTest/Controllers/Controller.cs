@@ -1,6 +1,9 @@
 using Fanex.AccInfo.Business.Models;
 using Fanex.AccInfo.Business.Services;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Text;
 
 namespace Fanex.AccInfo.ServiceTest.Controllers
 {
@@ -11,17 +14,29 @@ namespace Fanex.AccInfo.ServiceTest.Controllers
         [HttpGet]
         public JsonResult Execute()
         {
-            AccInfoConfigService.Config.ApiUrl = "https://accinfo.nexdev.net/";
-            var service = new AccInfoClientServiceImp();
+            AccInfoConfigService.Config.ApiUrl = "http://localhost:31599/";//"https://accinfo.nexdev.net/";
+
             var param = new ParamModel
             {
-                ApiKey = "3IlQmYfn@;(juVHrrf3oWnEv'JVCqWUiyfuk{V$;L^eh^36;5J",
+                ApiKey = "%MPAkBS8eZGkNEHD4M7fs6EQNPLrzJg98$",
                 Keys = ["DBWH.bodb_dwrs.dwrs", "DBMMS.bodb_MMS.wsv_nap"]
             };
 
-            var result = service.Query(param);
+            var client = new HttpClient();
+            client.BaseAddress = new Uri($"{AccInfoConfigService.Config.ApiUrl}Auth/Query");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            return new JsonResult(result);
+            var json = JsonConvert.SerializeObject(param, Formatting.Indented);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var message = client.PostAsync(client.BaseAddress, content).Result;
+            if (message.IsSuccessStatusCode)
+            {
+                var rs = message.Content.ReadAsStringAsync().Result;
+            }
+
+            return new JsonResult(token);
         }
     }
 }
