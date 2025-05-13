@@ -1,44 +1,44 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
 namespace Fanex.WebApiClient.Utility
 {
-    public static class WebApiClientService
+    public class WebApiClientService
     {
-        private static readonly HttpClient client = new HttpClient();
-        private static readonly MediaTypeWithQualityHeaderValue media = new MediaTypeWithQualityHeaderValue("application/json");
+        private static HttpClient client = new();
+        private static readonly MediaTypeWithQualityHeaderValue Media = new("application/json");
         public static string ApiUrl { get; set; }
 
         public static T PostAsync<T, P>(string action, P inputParams)
         {
             var rootUrl = NormalizeBaseUrl(ApiUrl);
-            if (client.BaseAddress == null)
-            {
-                client.BaseAddress = new Uri(rootUrl);
-            }
+            client = new HttpClient();
+            client.BaseAddress = new Uri(rootUrl);
 
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(media);
+            client.DefaultRequestHeaders.Accept.Add(Media);
 
-            using (var content = new StringContent(JsonConvert.SerializeObject(inputParams, Formatting.Indented, new MemoryStreamJsonConverter()), Encoding.UTF8, "application/json"))
+            using var content = new StringContent(JsonConvert.SerializeObject(inputParams), Encoding.UTF8, "application/json");
+            var responseResult = client.PostAsync(action, content).Result;
+            if (responseResult.IsSuccessStatusCode)
             {
-                var responseResult = client.PostAsync(action, content).GetAwaiter().GetResult();
-                if (responseResult.IsSuccessStatusCode)
-                {
-                    var data = responseResult.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<T>(data.Result, new MemoryStreamJsonConverter());
-                }
-
-                var message = $"{responseResult.StatusCode} - {responseResult.ReasonPhrase} - {rootUrl}";
-                throw new Exception(message);
+                var data = responseResult.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(data.Result)!;
             }
+
+            client.Dispose();
+
+            return default!;
         }
 
         private static string NormalizeBaseUrl(string url)
         {
+            if (string.IsNullOrEmpty(url))
+            {
+                throw new Exception("LetstalkServiceApi Url can't not be null.");
+            }
+
             return url.EndsWith("/") ? url : url + "/";
         }
     }

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fanex.AccInfo.Business\Fanex.AccInfo.Business.csproj" />
+    <ProjectReference Include="..\Fanex.WebApiClient.Utility\Fanex.WebApiClient.Utility.csproj" />
   </ItemGroup>
 
 </Project>
